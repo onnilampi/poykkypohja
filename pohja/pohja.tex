@@ -1,0 +1,130 @@
+% latex-minutes.tex
+\documentclass[finnish,12pt,a4paper]{article}
+\pagestyle{plain}
+
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{pstricks}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    anchorcolor=blue,
+bookmarks=true]{hyperref}
+\usepackage{float}
+\usepackage[british]{babel}
+\usepackage[nodayofweek]{datetime}
+\usepackage[utf8]{inputenc}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{10.0in}
+\setlength{\footskip}{18pt}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6in}
+\setlength{\marginparwidth}{1in}
+\renewcommand{\familydefault}{\sfdefault}
+\let\margin\marginpar
+\newcommand\myMargin[1]{\margin{\raggedright\scriptsize #1}}
+\renewcommand{\marginpar}[1]{\myMargin{#1}}
+%omia makroja
+\newcommand{\ekatarkastaja}{Penis Pippeli}
+\newcommand{\tokatarkastaja}{Idi Juutti}
+\newcommand{\ekalaskija}{Eka Laskija}
+\newcommand{\tokalaskija}{Toka Laskija}
+\newcommand{\puhis}{Pertsa Puhaanjohtaja}
+\newcommand{\sihteeri}{Sami Sihteeri}
+\newcommand{\alkaa}{00:00}
+\newcommand{\loppuu}{00:01}
+\newcommand{\aika}{1.1.1970}
+\newcommand{\paikka}{Paikka X}
+\newcommand{\action}[3]{\marginpar{#1 [#2]}}
+
+\begin{document}
+
+\title{Pöytäkirja}
+\author{Yhdistys}
+\date{\aika{}}
+\maketitle
+
+
+\begin {center}
+\textbf{Paikka:} \paikka{}
+\end{center}
+\textbf{Hallituksesta paikalla:} 
+\begin{itemize}
+    \item Ensimmäinen Ukki (<virka>)
+    \item Toinen Ukki (myöhässä, saapui <saapumisaika>)
+    \item jne...
+\end{itemize}
+\textbf{Poissa:} 
+\begin{itemize}
+    \item Ensimmäinen Ukki
+    \item Toinen Ukki
+    \item jne...
+\end{itemize}
+\textbf{Hallituksen ulkopuolelta:} 
+\begin{itemize}
+    \item Ensimmäinen Ukki
+    \item Toinen Ukki
+    \item jne...
+\end{itemize}
+
+\section{Kokouksen avaus}
+\begin{itemize}
+    \item Puheenjohtaja avasi kokouksen kello \alkaa{}.
+\end{itemize}
+
+\section{Kokouksen järjestäytyminen}
+\begin{itemize}
+    \item Valittiin kokouksen puheenjohtajaksi \puhis{} ja sihteeriksi \sihteeri{}.
+    \item Valittiin pöytäkirjantarkastajiksi \ekatarkastaja{} ja \tokatarkastaja{}.
+        %% Tarvittaessa
+        %\item Valittiin ääntenlaskijoiksi \ekalaskija{} ja \tokalaskija{}.
+\end{itemize}
+
+\section{Todetaan kokouksen laillisuus ja päätösvaltaisuus}
+\begin{itemize}
+    \item Todettiin laillisuus ja päätösvaltaisuus
+\end{itemize}
+
+\section{Hyväksytään kokouksen työjärjestys}
+\begin{itemize}
+    \item Ei muutoksia esityslistaan, hyväksytään se suoraan kokouksen työjärjestykseksi.
+\end{itemize}
+
+\section{Ilmoitusasiat}
+\begin{itemize}
+    \item Kokoustarjoiluja on.
+\end{itemize}
+\subsection{Kuulumiskierros}
+\begin{itemize}
+    \item asdasd
+    \item qweqwe
+\end{itemize}
+
+\section{Muut esille tulevat asiat}
+\begin{itemize}
+    \item Ei muita esille tulevia asioita
+\end{itemize}
+\section{Kokouksen päättäminen}
+\begin{itemize}
+    \item Puheenjohtaja päätti kokouksen ajassa \loppuu{}. 
+\end{itemize}
+
+\noindent\begin{tabular}{ll}
+    \\[8ex]
+    \makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+    \puhis{}, puheenjohtaja & \sihteeri{}, sihteeri\\[4ex]% adds space between the two sets of signatures
+    \\[4ex]
+    \makebox[2.5in]{\hrulefill} & \makebox[2.5in]{\hrulefill}\\
+    \ekatarkastaja{}, pöytäkirjan tarkastaja& \tokatarkastaja{}, pöytäkirjan tarkastaja\\[8ex]% 
+\end{tabular}
+
+
+\end{document}
