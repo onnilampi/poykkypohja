@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{pstricks}
+\usepackage{eurosym}
 \usepackage{tikz}
 \usepackage{verbatim}
 \usepackage{wrapfig}
@@ -44,6 +45,8 @@ bookmarks=true]{hyperref}
 \newcommand{\aika}{1.1.1970}
 \newcommand{\paikka}{Paikka X}
 \newcommand{\action}[3]{\marginpar{#1 [#2]}}
+%näitä lisää tarpeen mukaan
+\newcommand{\ekaliite}[1]{\newpage \section*{Liite 1 - #1}}
 
 \begin{document}
 
@@ -90,7 +93,7 @@ bookmarks=true]{hyperref}
 
 \section{Todetaan kokouksen laillisuus ja päätösvaltaisuus}
 \begin{itemize}
-    \item Todettiin laillisuus ja päätösvaltaisuus
+    \item Todettiin laillisuus ja päätösvaltaisuus, korruptiokulut 20\euro{}.
 \end{itemize}
 
 \section{Hyväksytään kokouksen työjärjestys}
@@ -126,5 +129,6 @@ bookmarks=true]{hyperref}
     \ekatarkastaja{}, pöytäkirjan tarkastaja& \tokatarkastaja{}, pöytäkirjan tarkastaja\\[8ex]% 
 \end{tabular}
 
-
+\ekaliite{Liitteen nimi}
+<Liitten sisältö>
 \end{document}
