@@ -1,22 +1,22 @@
 #!/bin/bash
 
-varmistus(){
-	read -n1 -rsp $'Luettuasi ja ymmärrettyäsi yllä olevan tekstin, paina ANY-näppäintä.\nKeskeytys normaalisti CTRL+C:llä.\n'
+checkup(){
+	read -n1 -rsp $'After you\'ve read the text above, press any key.\nExit with CTRL+C.\n'
 }
 
 
 clear
 
-[ $UID -eq 0 ] && echo "Skriptiä ei tule ajaa sudona, jotta ladottujen dokumenttien käyttöoikeudet pysyvät kunnossa. Skriptissä ajetaan pakettien asennus sudona erikseen." && exit 1
+[ $UID -eq 0 ] && echo "Do not run this script as a super user, package installation will ask for password on its own." && exit 1
 
-echo "Sudona ajetaan vain ja ainoastaan pakettien asentaminen. Alla lyhyet selostukset siitä, mitä asennetaan ja miksi. Kaikki löytyvät ainakin Debian Jessien main-repositorystä."
-echo "Asennettavat paketit:"
-echo " * texlive, texlive-latex-recommended, texlive-latex-extra, texlive-lang-european - tarvittavat paketit, jotta dokumenttien latominen onnistuu"
-echo " * make - Makefilujen käyttäminen on kätevää ja tämä työkalu tarvitaan vain ja ainoastaan siksi"
-echo " * tree - Työkalu hakemistopolun tekemiseen"
-echo " * inotify-tools - Mahdollistaa makron, jonka avulla dokumentteja voidaan latoa automaattisesti"
+echo "Installing packages require root permissions. Here is a short description of why these are installed:"
+echo "Packages to install:"
+echo " * texlive, texlive-latex-recommended, texlive-latex-extra, texlive-lang-european - LaTeX-packages."
+echo " * make - Using Makefiles is an easy way to automate the compiling of LaTeX-documents."
+echo " * tree - Tool for printing the directory tree."
+echo " * inotify-tools - Enables the macro to automatically compile the document after saving changes."
 echo ""
-varmistus
+checkup
 
 clear
 
@@ -27,10 +27,10 @@ echo ""
 echo ""
 
 
-echo "Paketit toivon mukaan asennettu oikein, seuraavaksi ladotaan dokumentit. Tässä saattaa kestää muutama minuutti, mikäli jokainen mahdollinen dokumentti ladotaan. Odota kärsivällisesti, niin kauan kuin latominen ei pysähdy, kaikki on OK. :)"
+echo "Everything should now be installed. The next step is to compile the documents. This might take a while."
 echo ""
 
-varmistus
+checkup
 
 clear
 
@@ -39,4 +39,4 @@ make
 clear
 
 tree -dl
-echo "Dokumentit ladottu."
+echo "All done!"
